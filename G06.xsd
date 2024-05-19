@@ -32,13 +32,11 @@
   <xs:element name="deQueue">
     <xs:complexType>
       <xs:sequence>
-        <!-- ไม่มี input -->
+          <xs:element name="queueSuccess" type="xs:string"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
 
-  <!-- Element สำหรับผลลัพธ์การ deQueue -->
-  <xs:element name="queueSuccess" type="xs:string"/>
 
   <!-- Element สำหรับการ getQueueStatus -->
   <xs:element name="getQueueStatus">
