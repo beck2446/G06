@@ -1,1 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
+  <!-- ComplexType สำหรับ idUser -->
+  <xs:complexType name="idUserType">
+    <xs:sequence>
+      <xs:element name="name" type="xs:string"/>
+      <xs:element name="surname" type="xs:string"/>
+      <xs:element name="numberId" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <!-- ComplexType สำหรับ detailQueue -->
+  <xs:complexType name="detailQueueType">
+    <xs:sequence>
+      <xs:element name="concertName" type="xs:string"/>
+      <xs:element name="date" type="xs:date"/>
+      <xs:element name="time" type="xs:time"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <!-- Element สำหรับการ enQueue -->
+  <xs:element name="enQueue">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="idUser" type="idUserType"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <!-- Element สำหรับการ deQueue -->
+  <xs:element name="deQueue">
+    <xs:complexType>
+      <xs:sequence>
+        <!-- ไม่มี input -->
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <!-- Element สำหรับผลลัพธ์การ deQueue -->
+  <xs:element name="queueSuccess" type="xs:string"/>
+
+  <!-- Element สำหรับการ getQueueStatus -->
+  <xs:element name="getQueueStatus">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="detailQueue" type="detailQueueType"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <!-- Element สำหรับผลลัพธ์ของ getQueueStatus -->
+  <xs:element name="statusQueue" type="xs:string"/>
+  <xs:element name="amountQueue" type="xs:int"/>
+
+</xs:schema>
